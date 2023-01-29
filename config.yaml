@@ -1,0 +1,86 @@
+# definir les criteres de recherches
+# listes des INSEE codes et pas les codes postaux
+insee_codes:
+  - 750101
+  - 750102
+
+# 1: location, 2: achat
+projects:
+  - 2
+
+# 1: appartement, 2: maison
+types: 
+  - 1
+
+# pour l'achat: 1: ancien, 2: neuf, 4: projet de construction
+natures:
+  - 1
+  - 2
+  - 4
+
+# prix minimum ou 'NaN' 
+min_price: 30000
+
+# prix maximum ou 'NaN' 
+max_price: 200000
+
+# surface minimale ou 'NaN' 
+min_surface: 16
+
+# surface maximale ou 'NaN' 
+max_surface: "NaN"
+
+#d_dt_crea: tri par date, a_px: prix croissant, d_px: prix decroissant, a_surface: surface croissante
+#d_surface: surface decroissante, d_relevance: pertinence, a_sqr_meter_price: prix m2 le plus bas
+#d_sqr_meter_price: prix m2 le plus eleve
+sort: "d_dt_crea"
+
+# 1 pour uniquement les biens correspondant à tous mes critères, 0 sinon 
+mandatorycommodities: 1
+
+# utiliser pour la location meublee
+furnished: true
+
+enterprise: 0
+
+qsVersion: "1.0"
+
+m: "search_refine-redirection-search_results"
+
+# exclure les annonces contenant ses mots cles (case insensitive)
+filter: 
+  - "RDC" 
+  - "rez-de-chaussée"
+  - "rez de chaussée"
+  - "sans ascenseur"
+  - "Pas d'ascenseur"
+  - "colocation"
+  - "sous-loue"
+  - "sous-location"
+  - "sous location"
+
+# timeout randomise entre deux requetes pour eviter le captcha 
+min_timeout_between_requests: 5
+max_timeout_between_requests: 10
+max_request_retries_when_connection_error: 10
+
+# headers a copier du navigateur en inspectant la page web
+headers:
+  accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+  accept-encoding: 'gzip, deflate, br'
+  accept-language: 'en-US,en;q=0.9'
+  cache-control: 'no-cache'
+  pragma: 'no-cache'
+  sec-ch-device-memory: '8'
+  sec-ch-ua: '"Not?A_Brand";v="8", "Chromium";v="108", "Google Chrome";v="108"'
+  sec-ch-ua-arch: '""'
+  sec-ch-ua-full-version-list: '"Not?A_Brand";v="8.0.0.0", "Chromium";v="108.0.5359.99", "Google Chrome";v="108.0.5359.99"'
+  sec-ch-ua-mobile: '?1'
+  sec-ch-ua-model: '"Nexus 5"'
+  sec-ch-ua-platform: '"Android"'
+  sec-fetch-dest: 'document'
+  sec-fetch-mode: 'navigate'
+  sec-fetch-site: 'same-origin'
+  sec-fetch-user: '?1'
+  upgrade-insecure-requests: '1'
+  user-agent: 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36'
